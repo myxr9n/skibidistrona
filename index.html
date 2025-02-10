@@ -3,65 +3,69 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Title and Meta Description -->
     <title>szymool | Exclusive bonuses & free spins!</title>
     <meta name="description" content="Check out szymool's site to get the best & exclusive bonuses and free spins!">
-    
-    <!-- Open Graph Meta Tags -->
+
+    <!-- Open Graph / Social Media -->
     <meta property="og:url" content="https://szymool.bet">
     <meta property="og:type" content="website">
     <meta property="og:title" content="szymool | Exclusive bonuses & free spins!">
     <meta property="og:description" content="Check out szymool's site to get the best & exclusive bonuses and free spins!">
     <meta property="og:image" content="images/4a4131f6-35b1-4d85-b26e-a725f6bd8ab1.png">
-    
-    <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:domain" content="szymool.bet">
     <meta property="twitter:url" content="https://szymool.bet">
-    <meta name="twitter:title" content="szymool.bet | Exclusive bonuses & free spins!">
+    <meta name="twitter:title" content="szymool | Exclusive bonuses & free spins!">
     <meta name="twitter:description" content="Check out szymool's site to get the best & exclusive bonuses and free spins!">
-    <meta name="twitter:image" content="https://opengraph.b-cdn.net/production/images/4a4131f6-35b1-4d85-b26e-a725f6bd8ab1.png">
-    
+    <meta name="twitter:image" content="https://opengraph.b-cdn.net/production/images/4a4131f6-35b1-4d85-b26e-a725f6bd8ab1.png?token=p51DKblY5y9qiuTSRXNrJMcglCK0bXRxMcUZ-7qGqkc&height=630&width=1200&expires=33258658815">
+
     <!-- Favicon -->
     <link rel="icon" href="images/favicon.ico" type="image/x-icon" sizes="256x256">
-    
+
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/e23b2ab41a9ac29c.css" data-precedence="next">
     <link href="https://api.fontshare.com/v2/css?f[]=clash-display@1,2,3,4,5,6,7&display=swap" rel="stylesheet">
-    
-    <!-- Preload Scripts -->
-    <link rel="preload" as="script" fetchpriority="low" href="/_next/static/chunks/webpack-76bc42762dd97279.js">
-    
-    <!-- Scripts -->
-    <script src="js/4bd1b696-65bf7d47d760484c.js" async></script>
-    <script src="js/517-6a1b43a88f714ff6.js" async></script>
-    <script src="js/main-app-239fc0cc716759c7.js" async></script>
-    <script src="js/layout-2de39df1d1c0f0af.js" async></script>
-    <script src="js/970-bf0162eea0ffe221.js" async></script>
-    <script src="js/891-20e6c6c0469b167a.js" async></script>
-    <script src="js/770-56226f6e4ef8a21a.js" async></script>
-    <script src="js/307-9c79cf6b175b2c4d.js" async></script>
-    <script src="js/page-bde7281983226f08.js" async></script>
-    
-    <!-- Polyfills -->
-    <script src="js/polyfills-42372ed130431b0a.js" nomodule></script>
+
+    <!-- Preload Critical Scripts -->
+    <link rel="preload" as="script" href="/_next/static/chunks/webpack-76bc42762dd97279.js">
+
+    <!-- Defer JavaScript for Optimization -->
+    <script defer src="js/main-app-239fc0cc716759c7.js"></script>
+    <script defer src="js/layout-2de39df1d1c0f0af.js"></script>
+    <script defer src="js/page-bde7281983226f08.js"></script>
 </head>
 <body class="antialiased font-clash-display">
+
+    <!-- Theme Switching Script -->
     <script>
-        (function (e, t, r, n, o, a, i, u) {
-            let s = document.documentElement, l = ["light", "dark"];
-            function c(t) {
-                (Array.isArray(e) ? e : [e]).forEach(e => {
-                    let r = "class" === e, n = r && a ? o.map(e => a[e] || e) : o;
-                    r ? (s.classList.remove(...n), s.classList.add(t)) : s.setAttribute(e, t)
-                });
-                u && l.includes(t) && (s.style.colorScheme = t)
+        (function (attr, storageKey, defaultTheme, currentTheme, themes, customMap, enableSystem, colorScheme) {
+            let root = document.documentElement;
+            function applyTheme(theme) {
+                let classes = customMap ? themes.map(t => customMap[t] || t) : themes;
+                root.classList.remove(...classes);
+                root.classList.add(theme);
+                if (colorScheme && ["light", "dark"].includes(theme)) {
+                    root.style.colorScheme = theme;
+                }
             }
-            if (n) c(n);
-            else try {
-                let e = localStorage.getItem(t) || r, n = i && "system" === e ? window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light" : e;
-                c(n)
+            try {
+                let storedTheme = localStorage.getItem(storageKey) || defaultTheme;
+                let finalTheme = enableSystem && storedTheme === "system" ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") : storedTheme;
+                applyTheme(finalTheme);
             } catch (e) {}
         })("class", "theme", "dark", null, ["light", "dark"], null, true, true);
     </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GB7XRRW0K8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-GB7XRRW0K8', { page_path: window.location.pathname });
+    </script>
+
 </body>
 </html>
